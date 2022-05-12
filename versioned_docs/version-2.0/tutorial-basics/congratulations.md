@@ -76,32 +76,6 @@ If this JS SDK helps you build your dapps faster - please star this project, eve
 
 If you need help with setting up the boilerplate or have other questions - don't hesitate to write in our community forum and we will check asap. [Forum link](https://forum.moralis.io). The best thing about this SDK is the super active community ready to help at any time! We help each other.
 
-# 🧭 Table of Contents
-
-- [Intorduction!](#intorduction)
-- [🚀 Quick start](#-quick-start)
-      - [1. Install Moralis](#1-install-moralis)
-      - [Package manager](#package-manager)
-      - [Browser (UMD)](#browser-umd)
-      - [Browser (ESM)](#browser-esm)
-      - [2. Initialise Moralis](#2-initialise-moralis)
-- [⭐️ Star us](#️-star-us)
-- [🤝 Need help](#-need-help)
-- [🧭 Table of Contents](#-table-of-contents)
-- [⚙️ Configuration](#️-configuration)
-- [🥷 Support for NodeJs (backend) server](#-support-for-nodejs-backend-server)
-- [⚛️ Support for react-native](#️-support-for-react-native)
-- [👩‍🔬 Advanced setup](#-advanced-setup)
-      - [1. Install the dependencies](#1-install-the-dependencies)
-- [📦 Packages](#-packages)
-  - [Umbrella package](#umbrella-package)
-  - [Core module](#core-module)
-  - [Main modules](#main-modules)
-  - [API modules](#api-modules)
-  - [Network modules](#network-modules)
-  - [Connectors](#connectors)
-  - [Other](#other)
-- [🧙‍♂️ Community](#️-community)
 
 # ⚙️ Configuration
 
@@ -208,14 +182,14 @@ The core module is required in all applications. It will handle global dependenc
 
 | package                                    | Version | Changelog | Description                                                                          |
 | ------------------------------------------ | ------- | --------- | ------------------------------------------------------------------------------------ |
-| [@moralis/core](./packages/core/README.md) | TODO    | TODO      | Core logic, responsible for core logic and sharing state and events between packages |
+| [@moralis/core] | TODO    | TODO      | Core logic, responsible for core logic and sharing state and events between packages |
 
 ## Main modules
 
 | package                                          | Version | Changelog | Description                                                         |
 | ------------------------------------------------ | ------- | --------- | ------------------------------------------------------------------- |
-| [@moralis/server](./packages/server/README.md)   | TODO    | TODO      | Connecting and interaction with your moralis server instance server |
-| [@moralis/plugins](./packages/plugins/README.md) | TODO    | TODO      |                                                                     |
+| [@moralis/server]  | TODO    | TODO      | Connecting and interaction with your moralis server instance server |
+| [@moralis/plugins]| TODO    | TODO      |                                                                     |
 
 ## API modules
 
@@ -223,15 +197,15 @@ These are packages that wrap around the Moralis apis for easy use. You can call 
 
 | package                                          | Version | Changelog | Description |
 | ------------------------------------------------ | ------- | --------- | ----------- |
-| [@moralis/evm-api](./packages/evm-api/README.md) | TODO    | TODO      |             |
-| [@moralis/sol-api](./packages/sol-api/README.md) | TODO    | TODO      |             |
+| [@moralis/evm-api] | TODO    | TODO      |             |
+| [@moralis/sol-api] | TODO    | TODO      |             |
 
 ## Network modules
 
 | package                                  | Version | Changelog | Description                                       |
 | ---------------------------------------- | ------- | --------- | ------------------------------------------------- |
-| [@moralis/evm](./packages/evm/README.md) | TODO    | TODO      | All logic regarding connecting to EVM networks    |
-| [@moralis/sol](./packages/sol/README.md) | TODO    | TODO      | All logic regarding connecting to Solana networks |
+| [@moralis/evm] | TODO    | TODO      | All logic regarding connecting to EVM networks    |
+| [@moralis/sol]| TODO    | TODO      | All logic regarding connecting to Solana networks |
 
 ## Connectors
 
@@ -239,9 +213,9 @@ Connectors are modules that allow access to on-chain activities. These are requi
 
 | package                                                                                               | Version | Changelog | Description                                              |
 | ----------------------------------------------------------------------------------------------------- | ------- | --------- | -------------------------------------------------------- |
-| [@moralis/evm-connector-utils](./packages/evmConnectors/EvmConnectorUtils/README.md)                  | TODO    | TODO      | Utilities for EVM connectors                             |
-| [@moralis/evm-metamask-connector](./packages/evmConnectors/EvmMetamaskConnector/README.md)            | TODO    | TODO      | Connector to connect to an EVM network via Metamask      |
-| [@moralis/evm-wallet-connect-connector](./packages/evmConnectors/EvmWalletconnectConnector/README.md) | TODO    | TODO      | Connector to connect to an EVM network via Walletconnect |
+| [@moralis/evm-connector-utils]                  | TODO    | TODO      | Utilities for EVM connectors                             |
+| [@moralis/evm-metamask-connector]            | TODO    | TODO      | Connector to connect to an EVM network via Metamask      |
+| [@moralis/evm-wallet-connect-connector] | TODO    | TODO      | Connector to connect to an EVM network via Walletconnect |
 | @moralis/sol-phantom                                                                                  | TODO    | TODO      | TODO                                                     |
 
 ## Other

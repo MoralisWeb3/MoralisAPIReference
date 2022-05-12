@@ -16,9 +16,9 @@ Whether you are building your first blockchain project or are already a seasoned
 
 The video below explains more in-depth what Moralis is and how it helps your project.
 
-{% embed url="https://www.youtube.com/watch?v=txHnWDRB728&ab_channel=MoralisWeb3" %}
+<!-- {% embed url="https://www.youtube.com/watch?v=txHnWDRB728&ab_channel=MoralisWeb3" %}
 Short lecture explaining the value-proposition of Moralis.
-{% endembed %}
+{% endembed %} -->
 
 ## What are Moralis Servers?
 
@@ -32,13 +32,13 @@ Here is where all of your data will be stored. For example, when a user signs in
 
 You can then use this data instantaneously in your dApp frontend.
 
-You can read more under the sections: [Moralis Server Database](moralis-dapp/database/) and [User Authentication](moralis-dapp/users/crypto-login.md).
+You can read more under the sections: [Moralis Server Database] and [User Authentication].
 
 ### Cloud Code
 
-If you need to execute backend code in your dApp, you can do so by using [Moralis' Cloud Code](moralis-dapp/cloud-code/) feature. Maybe you need to do aggregation or filtering on data that requires computation on the backend. By using cloud code, you can write functions in JavaScript, which can then be triggered by either calling it from your dApp, when certain events happen or triggered by a scheduled job.
+If you need to execute backend code in your dApp, you can do so by using [Moralis' Cloud Code] feature. Maybe you need to do aggregation or filtering on data that requires computation on the backend. By using cloud code, you can write functions in JavaScript, which can then be triggered by either calling it from your dApp, when certain events happen or triggered by a scheduled job.
 
-You can read more about this in the [cloud code section](moralis-dapp/cloud-code/).
+You can read more about this in the [cloud code section].
 
 ### The Moralis SDK
 
@@ -61,10 +61,10 @@ We're excited for you to discover all the cool things you can build using Morali
 
 ## Prerequisites
 
-The documentation assumes that you have some type of knowledge with JavaScript, working with objects, querying databases, and some Web3 development. See the [Prerequisites](introduction/pre-requisites.md) page for more details.
+The documentation assumes that you have some type of knowledge with JavaScript, working with objects, querying databases, and some Web3 development. See the [Prerequisites] page for more details.
 
 {% content-ref url="introduction/pre-requisites.md" %}
-[pre-requisites.md](introduction/pre-requisites.md)
+[pre-requisites.md]
 {% endcontent-ref %}
 
 If you're new to Web3 development, then please watch the following video:
@@ -80,11 +80,11 @@ For more experienced developers, then make sure to watch the following video on 
 See the [Getting Started ](https://docs.moralis.io/moralis-dapp/getting-started)section to guide you through setting up your first server with Moralis and how to integrate it with your dApp:
 
 {% content-ref url="moralis-dapp/getting-started/" %}
-[getting-started](moralis-dapp/getting-started/)
+[getting-started]
 {% endcontent-ref %}
 
 Or follow our guide on how to make a simple dApp in three minutes:
 
 {% content-ref url="guides/build-a-simple-dapp-in-3-minutes.md" %}
-[build-a-simple-dapp-in-3-minutes.md](guides/build-a-simple-dapp-in-3-minutes.md)
+[build-a-simple-dapp-in-3-minutes.md]
 {% endcontent-ref %}
