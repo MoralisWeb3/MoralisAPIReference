@@ -40,7 +40,6 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           
           includeCurrentVersion: false,
-          lastVersion: '1.0',
           versions: {
             '1.0' : {
               banner: 'none'
@@ -111,10 +110,10 @@ const config = {
             items: [
               {
                 label: 'V1',
-                to: '/docs/1.0/intro',
+                to: '/docs/intro',
               },
               {
-                label: 'V2 (in progress)',
+                label: 'V2 (In progress)',
                 to: '/docs/2.0/intro'
               }
             ],
