@@ -1,8 +1,4 @@
-<!-- ---
-sidebar_position: 4
---- -->
-
-# Live Query
+# LiveQuery
 
 ```js
 Moralis.LiveQuery.on('error', (error) => {

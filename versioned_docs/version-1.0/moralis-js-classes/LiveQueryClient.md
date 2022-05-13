@@ -1,4 +1,4 @@
-# Live Query Client
+# LiveQueryClient
 
 ### shouldOpen
 ### subscribe

@@ -1,10 +1,6 @@
-<!-- ---
-sidebar_position: 4
---- -->
-
 # User
 
-Docusaurus can manage multiple versions of your docs.
+`Moralis.User.xxx`
 
 
 ## linkWith

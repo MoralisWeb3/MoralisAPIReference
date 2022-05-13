@@ -38,6 +38,17 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          
+          includeCurrentVersion: false,
+          lastVersion: '1.0',
+          versions: {
+            '1.0' : {
+              banner: 'none'
+            },
+            '2.0' : {
+              banner: 'unreleased'
+            }
+          }
         },
         blog: {
           showReadingTime: true,
@@ -50,6 +61,7 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
       }),
+      
     ],
   ],
 
@@ -98,25 +110,29 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'V1',
+                to: '/docs/1.0/intro',
               },
+              {
+                label: 'V2 (in progress)',
+                to: '/docs/2.0/intro'
+              }
             ],
           },
           {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Youtube',
+                href: 'https://www.youtube.com/c/MoralisWeb3',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://moralis.io/mage/',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/MoralisWeb3',
               },
             ],
           },
@@ -124,17 +140,13 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Moralis Blog',
+                href: 'https://moralis.io/blog/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Moralis Copyright © ${new Date().getFullYear()}`,
       },
       prism: {
         theme: lightCodeTheme,
