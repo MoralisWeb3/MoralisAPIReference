@@ -1,72 +1,79 @@
+---
+toc_max_heading_level: 4
+---
 # User
 
-`Moralis.User.xxx`
+**Extension of Parse User Class ** : [Moralis.Role Members and Methods ](https://parseplatform.org/Parse-SDK-JS/api/master/Parse.User.html)
 
 
-## linkWith
+ `Moralis.User.xxx`
 
-## getUsername
+## `Moralis.User.xxx`
 
-## setUsername
+#### `linkWith()`
 
-## setPassword
+#### `getUsername()`
 
-## getEmail
+#### `setUsername()`
 
-## setEmail 
+#### `setPassword()`
 
-## getSessionToken
+#### `getEmail()`
 
-## authenticated
+#### `setEmail()`
 
-## signUp
+#### `getSessionToken()`
 
-## logIn
+#### `authenticated()`
 
-## save
+#### `signUp()`
 
-## destroy
+#### `logIn()`
 
-## fetch
+#### `save()`
 
-## fetchWithInclude
+#### `destroy()`
 
-## verifyPassword
+#### `fetch()`
 
-## readOnlyAttributes
+#### `fetchWithInclude()`
 
-## extend
+#### `verifyPassword()`
 
-## current
+#### `readOnlyAttributes()`
 
-## currentAsync
+#### `extend()`
 
-## signUp
+#### `current()`
 
-## logIn
+#### `currentAsync()`
 
-## loginOrSignup
+#### `signUp()`
 
-## become
+#### `logIn()`
 
-## me
+#### `loginOrSignup()`
 
-## hydrate
+#### `become()`
 
-## logInWith
+#### `me()`
 
-## logOut
+#### `hydrate()`
 
-## requestPasswordReset
+#### `logInWith()`
 
-## requestEmailVerification
+#### `logOut()`
 
-## verifyPassword
+#### `requestPasswordReset()`
 
-## allowCustomUserClass
+#### `requestEmailVerification()`
 
-## enableRevocableSession
+#### `verifyPassword()`
 
-##  enableUnsafeCurrentUser
+#### `allowCustomUserClass()`
 
-## disableUnsafeCurrentUser
+#### `enableRevocableSession()`
+
+#### `enableUnsafeCurrentUser()`
+
+#### `disableUnsafeCurrentUser()`

@@ -14,7 +14,7 @@ const appId = "YOUR_APP_ID";
 Moralis.start({ serverUrl, appId });
 ```
 
-<details><summary>Options</summary><br/>
+<details open><summary>Options</summary><br/>
 
 - `appId`(required)
 - `serverUrl` (required)

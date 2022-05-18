@@ -16,8 +16,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'MoralisWeb3', // Usually your GitHub org/user name.
+  projectName: 'Moralis', // Usually your repo name. 
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -73,7 +73,7 @@ const config = {
         title: 'API Reference',
         logo: {
           alt: 'Moralis Logo',
-          src: 'img/moralislogo.svg',
+          src: 'img/logo.svg',
         },
         items: [
           {

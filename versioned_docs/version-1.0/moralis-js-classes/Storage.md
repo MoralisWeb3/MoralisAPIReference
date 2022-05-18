@@ -1,5 +1,8 @@
+---
+draft: true
+---
+
 # Storage
 
-Docusaurus can manage multiple versions of your docs.
-
+`Moralis.Storage.xxx`
 

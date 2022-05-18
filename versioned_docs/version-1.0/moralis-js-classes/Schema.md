@@ -1,5 +1,4 @@
 # Schema
 
-Docusaurus can manage multiple versions of your docs.
-
+**Extension of Parse Schema Class ** : [Moralis.Schema Members and Methods ](https://parseplatform.org/Parse-SDK-JS/api/master/Parse.Schema.html)
 

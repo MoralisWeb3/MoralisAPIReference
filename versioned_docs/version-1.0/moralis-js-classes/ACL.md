@@ -1,33 +1,42 @@
+---
+toc_max_heading_level: 4
+---
 # ACL
 
-`Moralis.ACL.xxx`
+**Extension of Parse ACL Class ** : [Moralis.ACL Members and Methods ](https://parseplatform.org/Parse-SDK-JS/api/master/Parse.ACL.html)
 
-### toJSON
 
-### equals
+```js
+const roleACL = new Moralis.ACL();
+roleACL.xxx()
+```
+### `roleACL.xxx`
+#### toJSON()
 
-### setReadAccess
+#### equals()
 
-### getReadAccess
+#### setReadAccess()
 
-###  setWriteAccess
+#### getReadAccess()
 
-### getWriteAccess
+####  setWriteAccess()
 
-### setPublicReadAccess
+#### getWriteAccess()
 
-### getPublicReadAccess
+#### setPublicReadAccess()
 
-### setPublicWriteAccess
+#### getPublicReadAccess()
 
-### getPublicWriteAccess
+#### setPublicWriteAccess()
 
-### getRoleReadAccess
+#### getPublicWriteAccess()
 
-### getRoleWriteAccess
+#### getRoleReadAccess()
 
-### setRoleReadAccess
+#### getRoleWriteAccess()
 
-### setRoleWriteAccess
+#### setRoleReadAccess()
+
+#### setRoleWriteAccess()
 
 

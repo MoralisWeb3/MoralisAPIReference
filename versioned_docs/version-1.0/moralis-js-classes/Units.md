@@ -1,8 +1,12 @@
+---
+toc_max_heading_level: 4
+---
+
 # Units
 
-`Moralis.Units.xxx`
+### `Moralis.Units.xxx`
 
-### `ETH`
-### `Token`
-### `FromWei`
+#### `ETH(value)`
+#### `Token(value, decimals)`
+#### `FromWei(value,decimals)`
 

@@ -1,6 +1,6 @@
 # Analytics
 `Moralis.Analytics.xxx`
-### track
+### track()
 
 
 
