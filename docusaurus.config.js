@@ -65,7 +65,7 @@ const config = {
     ],
   ],
 
-  // themes: ['@docusaurus/theme-search-algolia'],
+  //themes: ['@docusaurus/theme-search-algolia'],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -152,6 +152,32 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: '1GCIS6JN93',
+  
+        // Public API key: it is safe to commit it
+        apiKey: '94cb19f5cce2dceebf34ac943cbc3c22',
+  
+        indexName: 'Moralis',
+  
+        // Optional: see doc section below
+        contextualSearch: true,
+  
+        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+        //externalUrlRegex: 'external\\.com|domain\\.com',
+  
+        // Optional: Algolia search parameters
+        //searchParameters: {},
+  
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        //searchPagePath: 'search',
+  
+        //... other Algolia params
+        
+        schedule: 'every 1 day at 11:22 pm',
+        
       },
     }),
 };

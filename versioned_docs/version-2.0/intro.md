@@ -2,46 +2,50 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Moralis Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## What is Moralis?
 
-## Getting Started
+Think **Firebase of crypto**. Moralis provides managed backend for blockchain projects. Automatically syncing the balances of your users into the database, allowing you to set up on-chain alerts, watch smart contract events, build indexes, and so much more. All features are accessed through an easy-to-use SDK. All features Moralis provides are cross-chain by default 🤯.
 
-Get started by **creating a new site**.
+## Why use Moralis?
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Moralis is the fastest way to build and deploy dApps on Ethereum, BSC, Polygon, Solana, and Elrond (more coming). All Moralis dApps are cross-chain by default. Building on Moralis ensures that your dApp is future-proof. Even if new blockchains are invented, your dApp will instantly work on any chain.
 
-### What you'll need
+Whether you are building your first blockchain project or are already a seasoned developer - Moralis will make your projects easier to build, maintain and improve.
 
-- [Node.js](https://nodejs.org/en/download/) version 14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+The video below explains more in-depth what Moralis is and how it helps your project.
 
-## Generate a new site
+<!-- {% embed url="https://www.youtube.com/watch?v=txHnWDRB728&ab_channel=MoralisWeb3" %}
+Short lecture explaining the value-proposition of Moralis.
+{% endembed %} -->
 
-Generate a new Docusaurus site using the **classic template**.
+### The Moralis SDK
 
-The classic template will automatically be added to your project after you run the command:
+Moralis' SDK is how we tie all of this together. Our JavaScript SDK is how your dApp interacts with your Moralis Server. Using the SDK, you can authenticate users, either through username and password or through a crypto wallet like MetaMask You can also use the SDK to get and set user data to fetch balances, NFTs, events, or transactions.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+You can read more about the SDK by[ clicking here](https://docs.moralis.io/moralis-dapp/connect-the-sdk/connect-with-js).
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+## Welcome to the Moralis API Reference
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+We're excited for you to discover all the cool things you can build using Moralis with just a few lines of code. Please refer to the methods and classes listed in the Reference Documentation for more information.
 
-## Start your site
+## Expectations
 
-Run the development server:
+- The docs assume that you have some programming knowledge.
+- The docs are a work in progress and receive regular updates.
+- If you find something confusing in the docs or have suggestions for improvements let us know by posting in the [Moralis forum](https://forum.moralis.io).
+- If you find a bug in the Moralis SDK or server dashboard, please report it in [this GitHub repo](https://github.com/MoralisWeb3/issue-tracker), along with a detailed description and steps to reproduce the issue. For technical questions, or if you need help with your code, then please create a post in the [Moralis forum.](https://forum.moralis.io) If you're unsure where to post, then please ask by creating a post in the [Moralis forum](https://forum.moralis.io) or on the [FAQ & How to Get Help](https://forum.moralis.io/c/faq/12) page.
 
-```bash
-cd my-website
-npm run start
-```
+## Prerequisites
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+The documentation assumes that you have some type of knowledge with JavaScript, working with objects, querying databases, and some Web3 development. See the [Prerequisites](https://docs.moralis.io/introduction/pre-requisites) page for more details.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+If you're new to Web3 development, then make sure to watch the following Moralis Course video on how to build a dApp with Moralis. [Moralis Full Course For Beginners](https://www.youtube.com/watch?v=MY4WYoZPr-U&ab_channel=MoralisWeb3)
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+## Setup Your First dApp with Moralis
+
+See the [Getting Started ](https://docs.moralis.io/moralis-dapp/getting-started)section to guide you through setting up your first server with Moralis and how to integrate it with your dApp: [Create a Moralis Dapp](https://docs.moralis.io/moralis-dapp/getting-started/create-a-moralis-dapp)
+
+
+Or follow our guide on how to make a simple dApp in three minutes: [Build a simple dapp in 3 minutes](https://docs.moralis.io/guides/build-a-simple-dapp-in-3-minutes)

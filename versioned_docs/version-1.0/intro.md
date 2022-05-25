@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Why use Moralis?
+# Moralis Introduction
 
 ## What is Moralis?
 
@@ -20,37 +20,15 @@ The video below explains more in-depth what Moralis is and how it helps your pro
 Short lecture explaining the value-proposition of Moralis.
 {% endembed %} -->
 
-## What are Moralis Servers?
-
-At the core of every dApp built with Moralis is a Moralis Server. Together with the Moralis SDK, it's what allows you to quickly create a dApp with user authentication and blockchain data such as user token balances, NFTs, transactions, and events.
-
-Let's quickly summarize the different components of a Moralis Server that you will be using.
-
-### Database
-
-Here is where all of your data will be stored. For example, when a user signs in to your dApp using [crypto wallet authentication](https://docs.moralis.io/moralis-dapp/users/crypto-login), that wallet address will automatically be saved to your database together with any data you have configured, such as token balances, historical transactions, or events.
-
-You can then use this data instantaneously in your dApp frontend.
-
-You can read more under the sections: [Moralis Server Database] and [User Authentication].
-
-### Cloud Code
-
-If you need to execute backend code in your dApp, you can do so by using [Moralis' Cloud Code] feature. Maybe you need to do aggregation or filtering on data that requires computation on the backend. By using cloud code, you can write functions in JavaScript, which can then be triggered by either calling it from your dApp, when certain events happen or triggered by a scheduled job.
-
-You can read more about this in the [cloud code section].
-
 ### The Moralis SDK
 
 Moralis' SDK is how we tie all of this together. Our JavaScript SDK is how your dApp interacts with your Moralis Server. Using the SDK, you can authenticate users, either through username and password or through a crypto wallet like MetaMask You can also use the SDK to get and set user data to fetch balances, NFTs, events, or transactions.
 
-You can read more about the SDK by[ clicking here](https://docs.moralis.io/moralis-dapp/getting-started/connect-the-sdk).
+You can read more about the SDK by[ clicking here](https://docs.moralis.io/moralis-dapp/connect-the-sdk/connect-with-js).
 
-## Welcome to the Moralis Documentation
+## Welcome to the Moralis API Reference
 
-{% embed url="https://www.youtube.com/watch?v=TAJnP8SLVI4" %}
-
-We're excited for you to discover all the cool things you can build using Moralis with just a few lines of code. Before we get started, let's go over some important information.
+We're excited for you to discover all the cool things you can build using Moralis with just a few lines of code. Please refer to the methods and classes listed in the Reference Documentation for more information.
 
 ## Expectations
 
@@ -61,30 +39,13 @@ We're excited for you to discover all the cool things you can build using Morali
 
 ## Prerequisites
 
-The documentation assumes that you have some type of knowledge with JavaScript, working with objects, querying databases, and some Web3 development. See the [Prerequisites] page for more details.
+The documentation assumes that you have some type of knowledge with JavaScript, working with objects, querying databases, and some Web3 development. See the [Prerequisites](https://docs.moralis.io/introduction/pre-requisites) page for more details.
 
-{% content-ref url="introduction/pre-requisites.md" %}
-[pre-requisites.md]
-{% endcontent-ref %}
-
-If you're new to Web3 development, then please watch the following video:
-
-{% embed url="https://youtu.be/hy7jCQdC2Wg" %}
-
-For more experienced developers, then make sure to watch the following video on how to build a dApp with Moralis using Truffle and Ganache.
-
-{% embed url="https://youtu.be/rd0TTLjQLy4" %}
+If you're new to Web3 development, then make sure to watch the following Moralis Course video on how to build a dApp with Moralis. [Moralis Full Course For Beginners](https://www.youtube.com/watch?v=MY4WYoZPr-U&ab_channel=MoralisWeb3)
 
 ## Setup Your First dApp with Moralis
 
-See the [Getting Started ](https://docs.moralis.io/moralis-dapp/getting-started)section to guide you through setting up your first server with Moralis and how to integrate it with your dApp:
+See the [Getting Started ](https://docs.moralis.io/moralis-dapp/getting-started)section to guide you through setting up your first server with Moralis and how to integrate it with your dApp: [Create a Moralis Dapp](https://docs.moralis.io/moralis-dapp/getting-started/create-a-moralis-dapp)
 
-{% content-ref url="moralis-dapp/getting-started/" %}
-[getting-started]
-{% endcontent-ref %}
 
-Or follow our guide on how to make a simple dApp in three minutes:
-
-{% content-ref url="guides/build-a-simple-dapp-in-3-minutes.md" %}
-[build-a-simple-dapp-in-3-minutes.md]
-{% endcontent-ref %}
+Or follow our guide on how to make a simple dApp in three minutes: [Build a simple dapp in 3 minutes](https://docs.moralis.io/guides/build-a-simple-dapp-in-3-minutes)
