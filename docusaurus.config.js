@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'API Reference',
   tagline: 'Empowered Web3 Development',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://reference.moralis.io/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
