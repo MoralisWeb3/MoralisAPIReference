@@ -27,6 +27,25 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    // [
+    //   'docusaurus-plugin-typedoc',
+
+    //   // Plugin / TypeDoc options
+    //   {
+    //     id: 'core',
+    //     entryPoints: ['/Users/mohammedabdulmalik/Downloads/All-regarding-dev/Ethereum-dev/Moralis-JS-SDK/packages/core/src/index.ts'],
+    //     tsconfig: '/Users/mohammedabdulmalik/Downloads/All-regarding-dev/Ethereum-dev/Moralis-JS-SDK/packages/core/tsconfig.json',
+    //     excludePrivate : true,
+    //     //entryPointStrategy: 'packages',
+    //     sidebar: {
+    //       fullNames: true,
+    //     },
+    //     out: 'core',
+    //   },
+    // ],
+  ],
+
   presets: [
     [
       'classic',
