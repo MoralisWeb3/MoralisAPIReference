@@ -7,6 +7,10 @@ custom_edit_url: null
 toc_max_heading_level: 4
 ---
 
+```js
+Moralis.Evm.xxx()
+```
+
 ### General
 #### web3Library
 #### connectors

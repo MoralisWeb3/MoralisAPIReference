@@ -10,8 +10,8 @@ toc_max_heading_level: 4
 Calls the Moralis API endpoint for results. You can test the current API here - [Moralis API](../../moralis-web3api/moralisweb3.mdx)
 
 ```js
-Moralis.EvmApi.native.xxx
-Moralis.EvmApi.account.xxx
+Moralis.EvmApi.native.xxx()
+Moralis.EvmApi.account.xxx()
 ```
 
 ### `native`
