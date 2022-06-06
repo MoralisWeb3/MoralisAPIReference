@@ -28,7 +28,7 @@ Moralis.start({ serverUrl, appId, environment });
 
 - `appId`(required)
 - `serverUrl` (required)
-- `environment` (required)
+- `environment`
 
 ### onInitialized
 ### onAuthenticating
