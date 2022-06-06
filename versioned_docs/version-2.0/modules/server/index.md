@@ -11,6 +11,25 @@ toc_max_heading_level: 4
 Moralis.server.xxx()
 ```
 ### start
+
+Connect to your Moralis instance.
+
+```js
+Moralis.start()
+```
+
+```js
+const serverUrl = "https://xxxxx/server";
+const appId = "YOUR_APP_ID";
+const environment = "YOUR_ENVIRONMENT"
+Moralis.start({ serverUrl, appId, environment });
+```
+<details open><summary>Options</summary><br/>
+
+- `appId`(required)
+- `serverUrl` (required)
+- `environment` (required)
+
 ### onInitialized
 ### onAuthenticating
 ### onAuthenticated
