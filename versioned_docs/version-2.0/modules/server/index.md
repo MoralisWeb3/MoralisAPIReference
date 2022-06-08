@@ -78,13 +78,15 @@ Moralis.server.isInitialized()
 
 ### authenticate
 
+Authenticate user with this method
+
 ```js
 Moralis.server.authenticate()
 ```
 <details open><summary>Options</summary><br/>
 
 - `method`(required) - EVM | SOL | SIGNIN | SIGN_UP 
--  `option` a key-value pair, where key is string and value can be string, number, boolean, null, undefined, Parse.File
+- `options` a key-value pair, where key is string and value can be string, number, boolean, null, undefined, Parse.File
 
 ### logout
 
@@ -138,7 +140,26 @@ Moralis.server.currentUserAsync()
 ```
 
 ### linkEvmAddress
+
+Link address to user profile
+
+```js
+Moralis.server.linkEvmAddress(account, options)
+```
+<details open><summary>Options</summary><br/>
+
+- `account`(required) - EVM address
+- `options` - A message string
+
+
 ### unlinkEvmAddress
+
+```js
+Moralis.server.linkEvmAddress(account)
+```
+<details open><summary>Options</summary><br/>
+
+- `account`(required) - EVM address
 
 ## Parse Server Classes
 ### ACL
