@@ -24,11 +24,13 @@ const appId = "YOUR_APP_ID";
 const environment = "YOUR_ENVIRONMENT"
 Moralis.server.start({ serverUrl, appId, environment });
 ```
-<details open><summary>Options</summary><br/>
+<details open><summary>Options</summary>
 
 - `appId`(required)
 - `serverUrl` (required)
 - `environment`
+
+</details>
 
 ### onInitialized
 
@@ -83,10 +85,12 @@ Authenticate user with this method
 ```js
 Moralis.server.authenticate()
 ```
-<details open><summary>Options</summary><br/>
+<details open><summary>Options</summary>
 
 - `method`(required) - EVM | SOL | SIGNIN | SIGN_UP 
 - `options` a key-value pair, where key is string and value can be string, number, boolean, null, undefined, Parse.File
+
+</details>
 
 ### logout
 
@@ -103,13 +107,14 @@ Method to Sign up a User
 ```js
 Moralis.server.signUp(username, password, email, fields)
 ```
-<details open><summary>Options</summary><br/>
+<details open><summary>Options</summary>
 
 - `username`(required)
 - `password` (required)
 - `email`
 - `fields` - a key-value pair, where key is string and value can be string, number, boolean, null, undefined, Parse.File
 
+</details>
 
 ### signIn
 
@@ -118,10 +123,12 @@ Method to Log in/Sign in a User
 ```js
 Moralis.server.signIn(username, password)
 ```
-<details open><summary>Options</summary><br/>
+<details open><summary>Options</summary>
 
 - `username`(required)
 - `password` (required)
+  
+</details>
 
 ### currentUser
 
@@ -146,20 +153,25 @@ Link address to user profile
 ```js
 Moralis.server.linkEvmAddress(account, options)
 ```
-<details open><summary>Options</summary><br/>
+
+<details open><summary>Options</summary>
 
 - `account`(required) - EVM address
 - `options` - A message string
 
+</details>
 
 ### unlinkEvmAddress
 
 ```js
 Moralis.server.linkEvmAddress(account)
 ```
-<details open><summary>Options</summary><br/>
+<details open><summary>Options</summary>
 
 - `account`(required) - EVM address
+
+
+</details>
 
 ## Parse Server Classes
 ### ACL
