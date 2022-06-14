@@ -11,20 +11,167 @@ toc_max_heading_level: 4
 Moralis.server.xxx()
 ```
 ### start
+
+Connect to your Moralis instance.
+
+```js
+Moralis.server.start()
+```
+
+```js
+const serverUrl = "https://xxxxx/server";
+const appId = "YOUR_APP_ID";
+const environment = "YOUR_ENVIRONMENT"
+Moralis.server.start({ serverUrl, appId, environment });
+```
+<details open><summary>Options</summary>
+
+- `appId`(required)
+- `serverUrl` (required)
+- `environment`
+
+</details>
+
 ### onInitialized
+
+Listen to events when a Moralis instance is Initialized
+
+```js
+Moralis.server.onInitailized()
+```
+
 ### onAuthenticating
+
+Listen to events while a User is being Authenticated
+
+```js
+Moralis.server.onAuthenticating()
+```
 ### onAuthenticated
+
+Listen to events while a User is Authenticated
+
+```js
+Moralis.server.onAuthenticated()
+```
+
 ### onAutenticatingError
+
+Listen to events when a User Autentication fails
+
+```js
+Moralis.server.onAutenticatingError()
+```
+
 ### onLoggedOut
+
+Listen to events when a User is Logged Out
+
+```js
+Moralis.server.onLoggedOut()
+```
+
 ### isInitialized
+
+Listen to events when a Moralis instance post Initialization
+```js
+Moralis.server.isInitialized()
+```
+
 ### authenticate
+
+Authenticate user with this method
+
+```js
+Moralis.server.authenticate()
+```
+<details open><summary>Options</summary>
+
+- `method`(required) - EVM | SOL | SIGNIN | SIGN_UP 
+- `options` a key-value pair, where key is string and value can be string, number, boolean, null, undefined, Parse.File
+
+</details>
+
 ### logout
+
+User gets logout with this Method
+
+```js
+Moralis.server.logout()
+```
+
 ### signUp
+Method to Sign up a User
+
+
+```js
+Moralis.server.signUp(username, password, email, fields)
+```
+<details open><summary>Options</summary>
+
+- `username`(required)
+- `password` (required)
+- `email`
+- `fields` - a key-value pair, where key is string and value can be string, number, boolean, null, undefined, Parse.File
+
+</details>
+
 ### signIn
+
+Method to Log in/Sign in a User
+
+```js
+Moralis.server.signIn(username, password)
+```
+<details open><summary>Options</summary>
+
+- `username`(required)
+- `password` (required)
+  
+</details>
+
 ### currentUser
+
+Returns current User details
+
+```js
+Moralis.server.currentUser()
+```
+
 ### currentUserAsync
+
+Returns current User details with a promise
+
+```js
+Moralis.server.currentUserAsync()
+```
+
 ### linkEvmAddress
+
+Link address to user profile
+
+```js
+Moralis.server.linkEvmAddress(account, options)
+```
+
+<details open><summary>Options</summary>
+
+- `account`(required) - EVM address
+- `options` - A message string
+
+</details>
+
 ### unlinkEvmAddress
+
+```js
+Moralis.server.linkEvmAddress(account)
+```
+<details open><summary>Options</summary>
+
+- `account`(required) - EVM address
+
+
+</details>
 
 ## Parse Server Classes
 ### ACL
