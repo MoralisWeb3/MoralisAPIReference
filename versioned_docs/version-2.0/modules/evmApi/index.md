@@ -135,6 +135,8 @@ Moralis.EvmApi.native.getLogsByAddress()
 - `cursor` (optional): string; 
 - `limit` (optional): number;
 
+</details>
+
 **Example Result in data:**
 
 ```js
@@ -159,6 +161,8 @@ Moralis.EvmApi.native.getNFTTransfersByBlock()
 - `offset` (optional): number; 
 - `cursor` (optional): number;
 - `limit` (optional): number;
+
+</details>
 
 **Example Result in data:**
 ```js
@@ -189,9 +193,12 @@ Moralis.EvmApi.native.getContractEvents()
 - `offset` (optional): number; 
 - `limit` (optional): number;
 
+</details>
 
 ### `account`
 #### getTokenBalances
+
+
 #### getNativeBalance
 #### getNFTTransfers
 #### getTokenTransfers
@@ -212,6 +219,8 @@ Moralis.EvmApi.account.getTransactions()
 - `offset` (optional): number; 
 - `cursor` (optional): unknown; The cursor returned in the last response (for getting the next page) 
 - `limit` (optional): number;
+
+</details>
 
 #### getNFTs
 #### getNFTsForContract
