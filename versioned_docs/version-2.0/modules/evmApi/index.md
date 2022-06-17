@@ -403,7 +403,45 @@ total: 0
 
 ### `resolve`
 #### resolveDomain
+
+Resolves an Unstoppable domain and returns the address
+
+```js
+Moralis.EvmApi.resolve.resolveDomain()
+```
+
+<details open><summary>Options</summary>
+
+- `domain`(required): string;
+- `currency`(optional): "eth" | "0x1"; The currency to query
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+address: "0x8aaD44321A86b170879d7A244c1e8d360c99DdA8"
+```
+
 #### resolveAddress
+
+Resolves an ETH address and find the ENS name
+
+```js
+Moralis.EvmApi.resolve.resolveAddress()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; The address to be resolved.
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+name: "vitalik.eth"
+```
 
 ### `defi`
 #### getPairReserves
