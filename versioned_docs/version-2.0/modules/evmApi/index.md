@@ -445,7 +445,57 @@ name: "vitalik.eth"
 
 ### `defi`
 #### getPairReserves
+
+Get the liquidity reserves for a given pair address. Only Uniswap V2 based exchanges supported at the moment.
+
+```js
+Moralis.EvmApi.defi.getPairReserves()
+```
+
+<details open><summary>Options</summary>
+
+- `pair_address`(required): string; Liquidity pair address
+- `chain`(optional): The chain to query.
+- `providerUrl`(optional) - web3 provider url to user when using **local dev chain**
+- `to_block` (optional): string; To get the reserves at this block number.
+- `to_date` (optional): string; Get the reserves to this date (any format that is accepted by momentjs).Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+reserve0: "173021217577948615345141"
+reserve1: "1028820680475863522943"
+```
+
 #### getPairAddress
+
+Fetches and returns pair data of the provided token0+token1 combination.
+The token0 and token1 options are interchangable (ie. there is no different outcome in "token0=WETH and token1=USDT" or "token0=USDT and token1=WETH")
+
+```js
+Moralis.EvmApi.defi.getPairAddress()
+```
+
+<details open><summary>Options</summary>
+
+- `token0_address`(required): string; Token0 address.
+- `token1_address`(required): string; Token1 address.
+- `exchange` (required): "uniswapv2"| "uniswapv3" | "sushiswapv2" | "pancakeswapv2" | "pancakeswapv1" | "quickswap";
+- `chain`(optional): The chain to query.
+- `to_block` (optional): string; To get the reserves at this block number.
+- `to_date` (optional): string; Get the reserves to this date (any format that is accepted by momentjs).Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+pairAddress: "0x1b96b92314c44b159149f7e0303511fb2fc4774f"
+token0: {address: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c', name: 'Wrapped BNB', symbol: 'WBNB', logo: null, logo_hash: null, …}
+token1: {address: '0xe9e7cea3dedca5984780bafc599bd69add087d56', name: 'BUSD Token', symbol: 'BUSD', logo: null, logo_hash: null, …}
+```
 
 ### `token`
 #### reSyncMetadata
@@ -469,8 +519,91 @@ name: "vitalik.eth"
 
 ### `info`
 #### web3ApiVersion
+
+Returns the web3 api version
+
+```js
+Moralis.EvmApi.info.web3ApiVersion()
+```
+
+**Example Result in data module of return object**
+
+```js
+version: "0.0.53"
+```
+
 #### endpointWeights
+
+Returns the endpoint price list for rate limits and costs
+
+```js
+Moralis.EvmApi.info.endpointWeights()
+```
+
+**Example Result in data module of return object**
+
+```js
+Array(37)
+0: {endpoint: 'getBlock', path: '/block/{block_number_or_hash}', price: 5, rateLimitCost: 5}
+1: {endpoint: 'getContractEvents', path: '/{address}/events', price: 2, rateLimitCost: 2}
+2: {endpoint: 'getTransactions', path: '/{address}', price: 1, rateLimitCost: 1}
+3: {endpoint: 'getNativeBalance', path: '/{address}/balance', price: 1, rateLimitCost: 1}
+4: {endpoint: 'getTokenBalances', path: '/{address}/erc20', price: 5, rateLimitCost: 5}
+5: {endpoint: 'getTokenTransfers', path: '/{address}/erc20/transfers', price: 2, rateLimitCost: 2}
+6: {endpoint: 'getTokenAddressTransfers', path: '/erc20/{address}/transfers', price: 2, rateLimitCost: 2}
+7: {endpoint: 'searchNFTs', path: '/nft/search', price: 5, rateLimitCost: 5}
+8: {endpoint: 'getNFTs', path: '/{address}/nft', price: 5, rateLimitCost: 5}
+9: {endpoint: 'getNFTTransfers', path: '/{address}/nft/transfers', price: 5, rateLimitCost: 5}
+10: {endpoint: 'getNftTransfersByBlock', path: '/block/{block_number_or_hash}/nft/transfers', price: 2, rateLimitCost: 2}
+11: {endpoint: 'getNFTsForContract', path: '/{address}/nft/{token_address}', price: 5, rateLimitCost: 5}
+12: {endpoint: 'getTokenMetadata', path: '/erc20/metadata', price: 1, rateLimitCost: 1}
+13: {endpoint: 'web3ApiVersion', path: '/web3/version', price: 1, rateLimitCost: 1}
+14: {endpoint: 'getTokenMetadataBySymbol', path: '/erc20/metadata/symbols', price: 1, rateLimitCost: 1}
+15: {endpoint: 'getTokenPrice', path: '/erc20/{address}/price', price: 3, rateLimitCost: 3}
+16: {endpoint: 'getTokenAllowance', path: '/erc20/{address}/allowance', price: 1, rateLimitCost: 1}
+17: {endpoint: 'getAllTokenIds', path: '/nft/{address}', price: 5, rateLimitCost: 5}
+18: {endpoint: 'getContractNFTTransfers', path: '/nft/{address}/transfers', price: 5, rateLimitCost: 5}
+19: {endpoint: 'getNFTOwners', path: '/nft/{address}/owners', price: 5, rateLimitCost: 5}
+20: {endpoint: 'getNFTMetadata', path: '/nft/{address}/metadata', price: 5, rateLimitCost: 5}
+21: {endpoint: 'syncNFTContract', path: '/nft/{address}/sync', price: 5, rateLimitCost: 25}
+22: {endpoint: 'reSyncMetadata', path: '/nft/{address}/{token_id}/metadata/resync', price: 5, rateLimitCost: 25}
+23: {endpoint: 'getTokenIdMetadata', path: '/nft/{address}/{token_id}', price: 2, rateLimitCost: 2}
+24: {endpoint: 'getTokenIdOwners', path: '/nft/{address}/{token_id}/owners', price: 20, rateLimitCost: 20}
+25: {endpoint: 'getWalletTokenIdTransfers', path: '/nft/{address}/{token_id}/transfers', price: 2, rateLimitCost: 2}
+26: {endpoint: 'resolveDomain', path: '/resolve/{domain}', price: 1, rateLimitCost: 1}
+27: {endpoint: 'getPairReserves', path: '/{pair_address}/reserves', price: 1, rateLimitCost: 1}
+28: {endpoint: 'getLogsByAddress', path: '/{address}/logs', price: 2, rateLimitCost: 2}
+29: {endpoint: 'getNftTransfersFromToBlock', path: '/nft/transfers', price: 5, rateLimitCost: 5}
+30: {endpoint: 'getNFTTrades', path: '/nft/{address}/trades', price: 4, rateLimitCost: 4}
+31: {endpoint: 'getNFTLowestPrice', path: '/nft/{address}/lowestprice', price: 4, rateLimitCost: 4}
+32: {endpoint: 'runContractFunction', path: '/{address}/function', price: 2, rateLimitCost: 2}
+33: {endpoint: 'getTransaction', path: '/{address}', price: 2, rateLimitCost: 2}
+34: {endpoint: 'resolveAddress', path: '/resolve/{address}/reverse', price: 1, rateLimitCost: 1}
+35: {endpoint: 'uploadIPFSFolder', price: 25, rateLimitCost: 25}
+36: {endpoint: 'endpointWeights', path: '/info/endpointWeights', price: 0, rateLimitCost: 1}
+length: 37
+```
 
 ### `storage`
 #### uploadFolder
- 
+
+Uploads multiple files and place them in a folder directory
+
+```js
+Moralis.EvmApi.storage.uploadFolder()
+```
+
+<details open><summary>Options</summary>
+
+- `abi` (required): Array of JSON and Base64 Supported
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+Array(1)
+0: {path: 'https://ipfs.moralis.io:2053/ipfs/QmfL6fMaYJDnizFVj4wxyutDnGMePG2JL95rN2A5mcWyB1/moralis/logo.jpg'}
+length: 1
+
+```
