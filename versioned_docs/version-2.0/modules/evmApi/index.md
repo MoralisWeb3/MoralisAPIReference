@@ -499,23 +499,501 @@ token1: {address: '0xe9e7cea3dedca5984780bafc599bd69add087d56', name: 'BUSD Toke
 
 ### `token`
 #### reSyncMetadata
+ ReSync the metadata for an NFT
+   * The metadata(default) flag will request a the NFT's metadata from the already existing token_uri
+   * The uri flag will fetch the latest token_uri from the given NFT address. In sync mode the metadata will also be fetched
+   * The sync mode will make the endpoint synchronous so it will wait for the task to be completed before responding
+   * The async mode(default) will make the endpoint asynchronous so we will wait for the task to be completed before responding
+   
+```js
+Moralis.EvmApi.token.reSyncMetadata()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `token_id`(required): string; The id of the token.
+- `chain`(optional): The chain to query.
+- `flag` (optional): "uri" | "metadata";
+- `mode` (optional): "async" | "sync";
+
+</details>   
+
 #### getTokenPrice
+
+Returns the price nominated in the native token and usd for a given token contract address.
+   
+```js
+Moralis.EvmApi.token.getTokenPrice()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `chain`(optional): The chain to query.
+- `providerUrl`(optional) - web3 provider url to user when using **local dev chain**
+- `exchange` (optional): string;
+- `to_block` (optional): number;
+
+</details>
+
+
 #### getTokenAllowance
+
+Returns the price nominated in the native token and usd for a given token contract address.
+   
+```js
+Moralis.EvmApi.token.getTokenAllowance()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `chain`(optional): The chain to query.
+- `providerUrl`(optional) - web3 provider url to user when using **local dev chain**
+- `owner_address` (optional): string; The address of the token owner.
+- `spender_address` (optional): number; The address of the token spender.
+
+</details>
+
 #### getContractNFTTransfers
+
+Gets the transfers of the tokens matching the given parameters
+
+```js
+Moralis.EvmApi.token.getContractNFTTransfers()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `chain`(optional): The chain to query.
+- `format` (optional): "decimal" | "hex";
+- `lmit` (optional): number;
+- `cursor` (optional): string;
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+block_exists: true
+cursor: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmRlciI6IkRFU0MiLCJvZmZzZXQiOjAsImxpbWl0IjoxMDAsInRva2VuX2FkZHJlc3MiOiIweDdkZTMwODViMzE5MGIzYTc4NzgyMmVlMTZmMjNiZTAxMGY1Zjg2ODYiLCJ3aGVyZSI6eyJ0b2tlbl9hZGRyZXNzIjoiMHg3ZGUzMDg1YjMxOTBiM2E3ODc4MjJlZTE2ZjIzYmUwMTBmNWY4Njg2In0sInBhZ2UiOjEsImtleSI6IjE0MjgzOTA2LjgxLjk0LjAiLCJ0b3RhbCI6OTAyLCJpYXQiOjE2NTU1MTY3MzN9.yq3IsjF50_9oDwPToKie2OVqJcaCXMsssODDPJugzCA"
+page: 0
+page_size: 100
+result: (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+total: 902
+```
+
 #### getNftTransfersFromToBlock
+
+Gets the transfers of the tokens from a block number to a block number
+
+```js
+Moralis.EvmApi.token.getNftTransfersFromToBlock()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `chain`(optional): The chain to query.
+- `from_block`(optional): number; The minimum block number from where to get the transfers. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
+- `to_block` (optional): number; The maximum block number from where to get the transfers. Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `from_date` (optional): string; The date from where to get the transfers (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
+- `to_date` (optional): string; Get the transactions to this date (any format that is accepted by momentjs). Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `limit` (optional): number;
+- `cursor` (optional): string;
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+block_exists: true
+cursor: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmRlciI6IkRFU0MiLCJvZmZzZXQiOjAsImxpbWl0IjoxMDAsImZyb21fYmxvY2siOiIxIiwid2hlcmUiOnt9LCJwYWdlIjoxLCJrZXkiOiIxNDk4MjQ3Ni45NS4xNjkuMCIsInRvdGFsIjoxMjYzODYwMDEsImlhdCI6MTY1NTUxNzUzNH0.9JzvwTkpmePWqLdo9T-Az37_cIEMFNKyNUPeZJhGdcY"
+page: 0
+page_size: 100
+result: (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+total: 126386001
+```
+
 #### getTokenAddressTransfers
+
+Gets ERC20 token contract transactions in descending order based on block number
+
+```js
+Moralis.EvmApi.token.getTokenAddressTransfers()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `chain`(optional): The chain to query.
+- `subdomain`(optional) - The subdomain of the moralis server to use (**Only use when selecting local devchain as chain**)
+- `from_block`(optional): number; The minimum block number from where to get the transfers. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
+- `to_block` (optional): number; The maximum block number from where to get the transfers. Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `from_date` (optional): string; The date from where to get the transfers (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
+- `to_date` (optional): string; Get the transactions to this date (any format that is accepted by momentjs). Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `limit` (optional): number;
+- `cursor` (optional): string;
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+cursor: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhhMjEwN2ZhNWIzOGQ5YmJkMmM0NjFkNmVkZjExYjExYTUwZjZiOTc0IiwiY2hhaW4iOiIweDEiLCJsaW1pdCI6MTAwLCJ0b3BpYzMiOiI9Om51bGwiLCJ0b19ibG9jayI6IjE0OTc5ODg3IiwicGFnZSI6MSwidG90YWwiOjgxMjM5Niwib2Zmc2V0IjoyLCJ1YyI6dHJ1ZSwiaWF0IjoxNjU1NTE3OTM2fQ.HbcD2nmmYQ63WTcvDw_HGp_1ph5fthAE1-Wgf3O0hF8"
+page: 0
+page_size: 100
+result: (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+total: 812396
+```
+
 #### getNFTTrades
+
+Get the nft trades for a given contracts and marketplace
+
+```js
+Moralis.EvmApi.token.getNFTTrades()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `chain`(optional): The chain to query.
+- `from_block`(optional): number; The minimum block number from where to get the transfers. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
+- `to_block` (optional): number; To get the reserves at this block number.
+- `from_date` (optional): string; The date from where to get the transfers (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
+- `to_date` (optional): string; Get the reserves to this date (any format that is accepted by momentjs). Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `provider_url` (optional): string; web3 provider url to user when using **local dev chain**
+- `marketplace` (optional): opensea; marketplace from where to get the trades (only opensea is supported at the moment).
+- `limit` (optional): number;
+- `cursor` (optional): string;
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+cursor: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsaW1pdCI6NTAwLCJvZmZzZXQiOjAsIm9yZGVyIjpbWyJ0cmFuc2Zlcl9pbmRleCIsIkRFU0MiXV0sIndoZXJlIjp7InNlbGxlcl9hZGRyZXNzIjp7fSwiYnV5ZXJfYWRkcmVzcyI6e30sInRva2VuX2FkZHJlc3MiOiIweDdkZTMwODViMzE5MGIzYTc4NzgyMmVlMTZmMjNiZTAxMGY1Zjg2ODYifSwicGFnZSI6MSwia2V5IjoiMTQyMzg4NTguMjA0IiwidG90YWwiOjU0LCJpYXQiOjE2NTU1MTgxNDB9.KhaAiUdJp1YZZKx5d4qK8JFlYN2c0HFpjVIejq8sR0Y"
+page: 0
+page_size: 500
+result: (54) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+total: 54
+```
+
 #### getNFTLowestPrice
+
+Get the lowest price found for a nft token contract for the last x days (only trades paid in ETH)
+
+```js
+Moralis.EvmApi.token.getNFTLowestPrice()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `chain`(optional): The chain to query.
+- `days` (optional): number; The number of days to look back to find the lowest price. If not provided 7 days will be the default.
+- `provider_url` (optional): string; web3 provider url to user when using **local dev chain**
+- `marketplace` (optional): opensea; marketplace from where to get the trades (only opensea is supported at the moment).
+
+</details>
+
 #### getWalletTokenIdTransfers
+
+Gets the transfers of the tokens matching the given parameters
+
+```js
+Moralis.EvmApi.token.getWalletTokenIdTransfers()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `token_id`(required): string; The id of the token.
+- `chain`(optional): The chain to query.
+- `format`(optional): "decimal" | "hex";
+- `order`(optional): string; he field(s) to order on and if it should be ordered in ascending or descending order. Specified by: fieldName1.order,fieldName2.order. Example 1: "block_number", "block_number.ASC", "block_number.DESC", Example 2: "block_number and contract_type", "block_number.ASC,contract_type.DESC"
+- `limit`(optional): number; 
+- `cursor`(optional): string; The cursor returned in the last response (for getting the next page)
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+block_exists: true
+cursor: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmRlciI6IkRFU0MiLCJvZmZzZXQiOjAsImxpbWl0IjoxMDAsInRva2VuX2FkZHJlc3MiOiIweDdkZTMwODViMzE5MGIzYTc4NzgyMmVlMTZmMjNiZTAxMGY1Zjg2ODYiLCJ0b2tlbl9pZCI6IjE4Iiwid2hlcmUiOnt9LCJwYWdlIjoxLCJrZXkiOiIxNDIzODE1OC4xNjIuNDM2LjAiLCJ0b3RhbCI6MSwiaWF0IjoxNjU1NTIwMzM2fQ.gRd3pmZfh6jO01CRX2gDNy6niOTt-NxNwle83hth3t8"
+page: 0
+page_size: 100
+result: [{…}]
+total: 1
+```
+
 #### getTokenMetadataBySymbol
+
+Returns metadata (name, symbol, decimals, logo) for a given token contract address.
+
+```js
+Moralis.EvmApi.token.getTokenMetadataBySymbol()
+```
+
+<details open><summary>Options</summary>
+
+- `symbols`(required): string[]; The symbols to get metadata for.
+- `chain`(optional): The chain to query.
+- `subdomain`(optional) - The subdomain of the moralis server to use (**Only use when selecting local devchain as chain**)
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+ Array(106)
+[0 … 99]
+0: {address: '0x514910771af9ca656af840dff83e8264ecf986ca', name: 'Chain Link', symbol: 'LINK', decimals: '18', logo: 'https://cdn.moralis.io/eth/0x514910771af9ca656af840dff83e8264ecf986ca.png', …}
+1: {address: '0xa2df16c6d86fc5d9146555475b421b010d6393cc', name: 'LinkNetwork', symbol: 'LINK', decimals: '18', logo: null, …}
+2: {address: '0x7c809b9e0d40133d69a997f060f49c78d06369ef', name: 'ChainLink   Token', symbol: 'LINK', decimals: '18', logo: null, …}
+3: {address: '0xef8141faa2f27828522ddace18884ec0d78a47f5', name: 'ChainLink', symbol: 'LINK', decimals: '18', logo: null, …}
+4: .....
+5: .....
+....
+```
+
 #### getTokenMetadata
+
+Returns metadata (name, symbol, decimals, logo) for a given token contract address.
+
+```js
+Moralis.EvmApi.token.getTokenMetadata()
+```
+
+<details open><summary>Options</summary>
+
+- `addresses`(required): string[]; The addresses to get metadata for.
+- `chain`(optional): The chain to query.
+- `subdomain`(optional) - The subdomain of the moralis server to use (**Only use when selecting local devchain as chain**)
+- `providerUrl`(optional) - web3 provider url to user when using **local dev chain**
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+ Array(1)
+0: {address: '0xdac17f958d2ee523a2206206994597c13d831ec7', name: 'Tether USD', symbol: 'USDT', decimals: '6', logo: 'https://cdn.moralis.io/eth/0xdac17f958d2ee523a2206206994597c13d831ec7.png', …}
+length: 1
+```
+
 #### getAllTokenIds
+
+Gets data, including metadata (where available), for all token ids for the given contract address.
+   * Results are limited to 500 per page by default
+   * Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection
+
+```js
+Moralis.EvmApi.token.getAllTokenIds()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `chain`(optional): The chain to query.
+- `format`(optional): "decimal" | "hex";
+- `limit`(optional): number; 
+- `cursor`(optional): string; The cursor returned in the last response (for getting the next page)
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+cursor: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3aGVyZSI6eyJ0b2tlbl9hZGRyZXNzIjoiMHg3ZGUzMDg1YjMxOTBiM2E3ODc4MjJlZTE2ZjIzYmUwMTBmNWY4Njg2In0sImxpbWl0IjoxMDAsIm9mZnNldCI6MCwib3JkZXIiOltbInRva2VuX2hhc2giLCJERVNDIl1dLCJncm91cCI6WyJ0b2tlbl9oYXNoIiwidG9rZW5fYWRkcmVzcyIsInRva2VuX2lkIiwiYmxvY2tfbnVtYmVyX21pbnRlZCJdLCJwYWdlIjoxLCJrZXkiOiJlMzJlMzQzNDkxYmRiY2E4ZjUzYzE2NjY3OWY0M2FkZiIsInRvdGFsIjo3NDEsImlhdCI6MTY1NTUyMDY1NX0.y2cbl1VEr2Ed-8g43A0uc4YOu1y1uhP3B7rg6Wj1STc"
+page: 0
+page_size: 100
+result: (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+total: 741
+```
+
 #### searchNFTs
+
+Gets NFTs that match a given metadata search.
+
+```js
+Moralis.EvmApi.token.searchNFTs()
+```
+
+<details open><summary>Options</summary>
+
+- `q`(required): string; The search string.
+- `chain`(optional): The chain to query.
+- `format`(optional): "decimal" | "hex";
+- `filter`(optional): "name" | "description" | "attributes" | "global" | "name,description" | "name,attributes" | "description,attributes" | "name,description,attributes"; What fields the search should match on. To look into the entire metadata set the value to 'global'. To have a better response time you can look into a specific field like name.
+
+- `from_block`(optional): number; The minimum block number from where to start the search. Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
+- `to_block` (optional): number; The maximum block number from where to start the search. Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `from_date` (optional): string; The date from where to start the search (any format that is accepted by momentjs). Provide the param 'from_block' or 'from_date'. If 'from_date' and 'from_block' are provided, 'from_block' will be used.
+- `to_date` (optional): string; Get search results up until this date (any format that is accepted by momentjs). Provide the param 'to_block' or 'to_date'. If 'to_date' and 'to_block' are provided, 'to_block' will be used.
+- `addresses`(optional): string[]; The addresses to get metadata for.
+- `limit` (optional): number;
+- `cursor` (optional): string;
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+cursor: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJxIjoiUGFuY2FrZSIsImRlc2NyaXB0aW9uIjpmYWxzZSwiYXR0cmlidXRlcyI6ZmFsc2UsIm5hbWUiOmZhbHNlLCJnbG9iYWwiOmZhbHNlLCJsaW1pdCI6IjUwMCIsInRva2VuX2FkZHJlc3NlcyI6bnVsbCwid2hlcmUiOnt9LCJwYWdlIjoxLCJvZmZzZXQiOjAsImtleSI6ImVkMTdiYWUwOTllNjE3OWZiZWFjZjA4MTQxNDhmYzZhIiwidG90YWwiOjY2NzQsImlhdCI6MTY1NTUyMDc1N30.VbJESx5NI0p1PaqUhfjfWzAX0ersxkb5o2tbxoM6FI8"
+page: 0
+page_size: 500
+result: (500) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, …]
+total: 6674
+```
+
 #### getNFTOwners
+
+* Gets all owners of NFT items within a given contract collection
+* Use after /nft/contract/{token_address} to find out who owns each token id in a collection
+* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection
+   
+
+```js
+Moralis.EvmApi.token.getNFTOwners()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `chain`(optional): The chain to query.
+- `format`(optional): "decimal" | "hex";
+- `limit`(optional): number; 
+- `cursor`(optional): string; The cursor returned in the last response (for getting the next page)
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+cursor: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3aGVyZSI6eyJ0b2tlbl9hZGRyZXNzIjoiMHg3ZGUzMDg1YjMxOTBiM2E3ODc4MjJlZTE2ZjIzYmUwMTBmNWY4Njg2In0sImxpbWl0IjoxMDAsIm9mZnNldCI6MCwib3JkZXIiOltbInRyYW5zZmVyX2luZGV4IiwiREVTQyJdXSwicGFnZSI6MSwia2V5IjoiMTQyNzM4NTIuNDMuNjUuMCIsInRvdGFsIjo3NDEsImlhdCI6MTY1NTUyMTQwMn0.OEPtdnQuTlBNtMDd9qzRXobrjt-8uc7dm86gvjXalMQ"
+page: 0
+page_size: 100
+result: (100) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+status: "SYNCED"
+total: 741
+```
+
 #### getTokenIdOwners
+
+* Gets all owners of NFT items within a given contract collection
+* Use after /nft/contract/{token_address} to find out who owns each token id in a collection
+* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection  
+
+```js
+Moralis.EvmApi.token.getTokenIdOwners()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `token_id`(required): string; The id of the token.
+- `chain`(optional): The chain to query.
+- `format`(optional): "decimal" | "hex";
+- `limit`(optional): number; 
+- `cursor`(optional): string; The cursor returned in the last response (for getting the next page)
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+cursor: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3aGVyZSI6eyJ0b2tlbl9hZGRyZXNzIjoiMHg3ZGUzMDg1YjMxOTBiM2E3ODc4MjJlZTE2ZjIzYmUwMTBmNWY4Njg2IiwidG9rZW5faWQiOiIxIiwidG9rZW5faGFzaCI6ImVjNTU1ZDA2MDFlOTVhMzQ1MmQ4YThiYmNlOGFhOGI5In0sImxpbWl0IjoxMDAsIm9mZnNldCI6MCwib3JkZXIiOltbInRyYW5zZmVyX2luZGV4IiwiREVTQyJdXSwicGFnZSI6MSwia2V5IjoiMTQyMzgxNTguMTYyLjQxOS4wIiwidG90YWwiOjEsImlhdCI6MTY1NTUyMTQ5N30.tC_G6wlwRl35QnucefQBEjMqCWoEVi7eEpmlIiBDPrY"
+page: 0
+page_size: 100
+result: [{…}]
+status: "SYNCED"
+total: 1
+```
+
 #### getTokenIdMetadata
+
+* Gets data, including metadata (where available), for the given token id of the given contract address.
+* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection.
+
+```js
+Moralis.EvmApi.token.getTokenIdMetadata()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `token_id`(required): string; The id of the token.
+- `chain`(optional): The chain to query.
+- `format`(optional): "decimal" | "hex";
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+amount: "1"
+block_number: "14238158"
+block_number_minted: "14238158"
+contract_type: "ERC721"
+last_metadata_sync: "2022-06-16T06:15:09.467Z"
+last_token_uri_sync: "2022-05-19T20:40:48.775Z"
+metadata: "{\"name\":\"Baby Mutant #1\",\"description\":\"\",\"image\":\"ipfs://QmPUDVLP9W1pWpCTpGvpPbMu4nVpCuu2A7M6tQovDpVDoD/1.png\",\"dna\":\"ae67505fd836e20e0077dec5d4505759f775958f\",\"edition\":1,\"date\":1645022752327,\"artist\":\"Skurvydogg\",\"attributes\":[{\"trait_type\":\"BackGrounds\",\"value\":\"Radioactive_Yellow_Forest\"},{\"trait_type\":\"Furs\",\"value\":\"Gold\"},{\"trait_type\":\"Eyes\",\"value\":\"Hypnotized_M3\"},{\"trait_type\":\"Clothes\",\"value\":\"Toga_M2\"},{\"trait_type\":\"Mouths\",\"value\":\"Color_grill_M2\"}]}"
+name: "Baby Ape Mutant Club"
+owner_of: "0x324fb4a58674758e00c3a49409b815de1398bfe8"
+symbol: "BAMC"
+synced_at: "2022-06-16T06:15:09.467Z"
+token_address: "0x7de3085b3190b3a787822ee16f23be010f5f8686"
+token_hash: "ec555d0601e95a3452d8a8bbce8aa8b9"
+token_id: "1"
+token_uri: "https://ipfs.moralis.io:2053/ipfs/QmajSqgxY3cWBgBeRm38vasJAcTit1kp5EwqVHxszJYgUC/1.json"
+```
+
 #### getNFTMetadata
+
+* Gets the contract level metadata (name, symbol, base token uri) for the given contract
+* Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection
+
+```js
+Moralis.EvmApi.token.getNFTMetadata()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `chain`(optional): The chain to query.
+
+</details>
+
+**Example Result in data module of return object**
+
+```js
+contract_type: "ERC721"
+name: "Baby Ape Mutant Club"
+symbol: "BAMC"
+synced_at: "2022-02-19T00:00:00.000Z"
+token_address: "0x7de3085b3190b3a787822ee16f23be010f5f8686"
+```
+
 #### syncNFTContract
+
+Sync a Contract for NFT Index
+
+```js
+Moralis.EvmApi.token.syncNFTContract()
+```
+
+<details open><summary>Options</summary>
+
+- `address`(required): string; Address of the contract.
+- `chain`(optional): The chain to query.
+
+</details>
+
 
 ### `info`
 #### web3ApiVersion
