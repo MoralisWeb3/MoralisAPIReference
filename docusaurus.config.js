@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'API Reference',
   tagline: 'Empowered Web3 Development',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://reference.moralis.io/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -26,6 +26,25 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+  plugins: [
+    // [
+    //   'docusaurus-plugin-typedoc',
+
+    //   // Plugin / TypeDoc options
+    //   {
+    //     id: 'core',
+    //     entryPoints: ['/Users/mohammedabdulmalik/Downloads/All-regarding-dev/Ethereum-dev/Moralis-JS-SDK/packages/core/src/index.ts'],
+    //     tsconfig: '/Users/mohammedabdulmalik/Downloads/All-regarding-dev/Ethereum-dev/Moralis-JS-SDK/packages/core/tsconfig.json',
+    //     excludePrivate : true,
+    //     //entryPointStrategy: 'packages',
+    //     sidebar: {
+    //       fullNames: true,
+    //     },
+    //     out: 'core',
+    //   },
+    // ],
+  ],
 
   presets: [
     [
